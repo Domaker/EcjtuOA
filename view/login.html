@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>oa公文系统</title>
+	<link rel="stylesheet" href="view/css/bootcss/css/bootstrap.css">
+	<link rel="stylesheet" href="view/css/bootcss/css/bootstrap.min.css">
+	<link rel="stylesheet" href="view/css/bootcss/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="view/css/bootcss/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="view/css/font/css/font-awesome.css">
+	<link href="view/css/login.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="view/css/header-ch.css">
+	<!--[if lte ie 7]>
+	<link rel="stylesheet" href="view/css/login-ie.css">
+	<link rel="stylesheet" href="view/header-ie.css">
+	<![endif]-->
+	<script src="view/js/jquery.js"></script>
+	<script type="text/javascript">
+		function login_ajax(){
+			var user=document.getElementById('user').value;
+			var pass=document.getElementById("pwd").value;
+			dataa={
+				"user":user,
+				"pass":pass
+			};
+			$.ajax({
+	        	cache: false,
+		        type: "POST",
+		        url:"ecjtu/login.php",
+		        data:dataa,
+		        dataType:"json",
+		        error: function(request) {
+		            alert("链接失败");
+		        },
+		        success: function(data) {
+		        	if(data.state=="success"){
+		        		alert("登录成功！欢迎回来,"+data.name);
+		        		window.location.href="index.php?page=1";
+		        	}else{
+		        		alert(data.message);
+		        	}
+		        }
+			});
+		}
+		function login(){
+			return false;
+		}
+
+		function alert_login(){
+			alert("请先登录！");
+		}
+	</script>
+</head>
+<body>
+		<div class="header">
+			<div class="logo"><img src="view/images/logo.png" alt="ECJTU.NET" title="日新OA系统"></div>
+			<div class="top_right">
+				<ul>
+					<li><a href="index.php?page=1"><i class="icon-home"></i> 首页</a></li>
+					<li><a href="index.php?page=3"><i class="icon-user"></i> 个人中心</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="blue"></div>
+        <div class="entry">	
+			<form onsubmit="return login();">
+				<div class="login">
+					<b class="icon-user">姓名：</b>&ensp;<input class="input" name="username" type="text" id="user"/>
+				</div>
+				<div class="login">
+					<b class="icon-lock">密码：</b>&ensp;<input class="input" name="password" type="password" id="pwd"/>
+				</div>
+				<button onclick="login_ajax()" class="btn btn-default" type="submit" style="cursor:pointer;" >登录</button>
+			</form>	
+	    </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" Content="text/html;charset=utf-8">
+<title>部门管理页</title>
+<link href="view/css/bootcss/css/bootstrap.css" rel="stylesheet">
+<link href="view/css/font/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="view/css/manager.css" />
+<link rel="stylesheet" href="view/css/public.css">
+<link rel="stylesheet" href="view/css/layNew.css">
+<link rel="stylesheet" href="view/css/font/css/font-awesome.css">
+<link rel="stylesheet" href="view/css/header-ch.css">
+<!--[if lte IE 7]>
+<link rel="stylesheet" href="view/css/header-ie.css">
+<![endif]-->
+<script src="view/js/jquery.js"></script>
+<script src="view/js/member.js"></script>
+<script src="view/js/comment.js"></script>
+</head>
+<body>
+    	<div class="header">
+            <div class="logo"><img src="view/images/logo.png" alt="ECJTU.NET" title="日新OA系统"></div>
+            <div class="top_right">
+                <ul>
+                    <li><a href="index.php?page=1"><i class="icon-home"></i> 首页</a></li>
+                    <li><a href="index.php?page=2"><i class="icon-group"></i> 成员管理</a></li>
+                    <li><a href="index.php?page=3"><i class="icon-user"></i> 个人中心<span class="badge"></span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+        	<div class="left">
+            	<ul>
+            		<li><a class="theme-publish"  href="javascript:;">任务发布</a></li>
+            		<li><a class="index.php?page=2" href="">成员管理</a></li>
+            	</ul>
+            </div>
+             <div id="meun">
+                <div id="table">
+                    <div id="choose">
+                    <select class="manager_select" id="depart" onchange="get_change()">
+                        <option value="日新网">日新网</option>
+                        <option value="驻外办">驻外办</option>
+                        <option value="市场部">市场部</option>
+                        <option value="办公室">办公室</option>
+                        <option value="财务部">财务部</option>
+                        <option value="编辑部">编辑部</option>
+                        <option value="记者团">记者团</option>
+                        <option value="微信">微信</option>
+                        <option value="微博">微博</option>
+                        <option value="互动社区">互动社区</option>
+                        <option value="青梅">青梅</option>
+                        <option value="视频">视频</option>
+                        <option value="视觉摄影">视觉摄影</option>
+                        <option value="交大青年">交大青年</option>
+                        <option value="网络应用">网络应用</option>
+                        <option value="体验组">体验组</option>
+                        <option value="网建组">网建组</option>
+                        <option value="运维组">运维组</option>
+                    </select>
+                </div>
+                    <table class="table table-hover text-center">
+                        <thead>
+                            <th class="text-center">姓名</th>
+                            <th class="text-center">性别</th>
+                            <th class="text-center">部门</th>
+                            <th class="text-center">中心</th>
+                            <th class="text-center">学院</th> 
+                            <th class="text-center">留言</th>
+                            <th class="text-center">删除</th>
+                        </thead>
+                        <tbody id="contain"></tbody>
+                    </table>
+                    <div class="theme-buy">
+                        <a class="btn btn-primary btn-large theme-add" href="javascript:;">添加成员</a>
+                    </div>  
+                </div>
+            </div>
+
+            <!-- 添加成员 -->
+            <div class="theme-popover">
+                 <div class="theme-poptit">
+                      <a href="javascript:;" title="关闭" class="close">×</a>
+                      <h3>添加成员</h3><div class="logo_show"><img src="view/images/logo_lit.png" alt=""></div>
+                 </div>
+                 <div class="theme-popbod dform">
+                       <form class="theme-signin" name="loginform" action="ecjtu/member.add.php" method="post">
+                            <ol>
+                                 <li><strong>姓名：</strong><input class="ipt" type="text" name="name" size="30" /><span style="color:red">(*)</span></li>
+                                 <li><strong>性别：</strong><input class="ipt" type="text" name="sex" size="30" /><span style="color:red">(*)</span></li> 
+                                 <li><strong>职位：</strong><input class="ipt" type="text" name="posit" size="30" /><span style="color:red">(*)</span></li>
+                                 <li><strong>部门：</strong><input class="ipt" type="text" name="depart" size="30" /><span style="color:red">(*)</span></li>
+                                 <li><strong>中心：</strong><input class="ipt" type="text" name="center" size="30" /><span style="color:red">(*)</span></li>
+                                 <li><strong>学院：</strong><input class="ipt" type="text" name="college" size="30" /><span style="color:red">(*)</span></li>
+                                 <li><strong>电话：</strong><input class="ipt" type="text" name="tel" size="30" /></li>
+                                 <li><strong>QQ：</strong><input class="ipt" type="text" name="qq" size="30" /></li>
+                                 <li><strong>管理权等级：</strong><input class="ipt" type="number" name="power" size="30" /><span class="badge show_help">?</span><span style="color:red">(*)</span></li>
+                                 <div class="help">
+                                    <span>管理权等级：<br>"0"为超级管理员，<br>"1"为总监级，<br>"2"为组长级，<br>"3"为助理级，<br>"4"为普通成员级</span>
+                                </div>
+                                 <li><input class="btn btn-primary" type="submit" name="submit" value=" 添 加 " /></li>
+                            </ol>
+                       </form>
+                 </div>
+            </div>
+            <div class="theme-popover-mask"></div>
+
+             <!-- 发布任务 -->
+          <div class="theme-pub">
+                 <div class="theme-poptit">
+                      <a href="javascript:;" title="关闭" class="close">×</a>
+                      <h1>发布任务</h1><div class="logo_show"><img src="view/images/logo_lit.png" alt="日新OA" title="日新OA"></div>
+                 </div>
+                 <div class="theme-popbod dform">
+                       <form class="theme-signin" name="loginform" action="ecjtu/task_add.php" method="post">
+                        <ol>
+                             <li><strong>项目名称：</strong><input class="ipt" type="text" name="title" size="30" /></li>
+                             <li><strong>&emsp;发布者：</strong><input class="ipt" type="text" name="writer" size="30" /></li>
+                             <li><strong>开始时间：</strong><input class="ipt" type="date" name="start" size="30" /></li>
+                             <li><strong>任务期限：</strong><input class="ipt" type="text" name="end" size="30" placeholder="天" /></li>
+                             <li><strong>项目简介：</strong><input class="ipt" type="text" name="des" size="30" /></li>
+                             <li><strong>项目详情：</strong><textarea class="" type="text" name="info" cols="35" rows="8" ></textarea> </li> 
+                             <li><input class="btn btn-primary" type="submit" name="submit_task" value=" 发 布 " /></li>
+                        </ol>
+                   </form>
+                 </div>
+            </div>
+            <div class="theme-pub-mask"></div>
+
+            <!-- 添加留言 -->
+            <div id="message">
+                 <div class="theme-message">
+                     <div class="theme-message-poptit">
+                          <a href="javascript:;" title="关闭" class="close">×</a>
+                          <h3 class="mes_h3"></h3><div class="logo_show"><img src="view/images/logo_lit.png" alt=""></div>
+                     </div>
+                     <div class="theme-popbod dform">
+                            <div class="theme-sign" >
+                                <textarea name="" id="get_mes" cols="85" rows="23"></textarea> 
+                            </div>
+                           <div class="get"></div>
+                     </div>
+                 </div>
+                <div class="theme-message-mask"></div>
+            </div>
+    </div>
+<script>
+
+    // 显示特权帮助
+    $(".show_help").mouseover(function(){
+        $(".help").show();
+    });
+    $(".show_help").mouseout(function(){
+        $(".help").hide();
+    });
+</script>
+</body>
+</html>

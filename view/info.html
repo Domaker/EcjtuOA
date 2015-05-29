@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>个人信息</title>
+	<link rel="stylesheet" type="text/css" href="view/css/info.css">
+	<link rel="stylesheet" href="view/css/bootcss/css/bootstrap.css">
+	<link rel="stylesheet" href="view/css/font/css/font-awesome.css">
+	<link rel="stylesheet" href="view/css/header-ch.css">
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" href="view/css/header-ie.css">
+	<![endif]-->
+	<script src="view/js/jquery.js"></script>
+	<script src="view/js/info.js"></script>
+	<script src="view/js/comment.js"></script>
+</head>
+<body id="body">
+	<div class="header">
+		<div class="logo"><img src="view/images/logo.png" alt="ECJTU.NET" title="日新OA系统"></div>
+		<div class="top_right">
+			<ul>
+		        <li><a href="index.php?page=1"><i class="icon-home"></i> 首页</a></li>
+		        <li><a href="index.php?page=2"><i class="icon-group"></i> 成员管理</a></li>
+		        <li><a href="index.php?page=3"><i class="icon-user"></i> 个人中心<span class="badge"></span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="main">
+	<div class="left">
+		<ul>
+			<li class="transition"><a class="present" href="index.php?page=3">个人资料</a></li>
+			<li class="transition"><a href="index.php?page=4">留言消息<span class="badge"></span></a></li>
+			<li class="transition"><a href="index.php?page=5">回复消息<span class="badge"></span></a></li>
+		</ul>
+	</div>
+	<div id="right" class="right">
+		<form action="ecjtu/info.update.php" method="post" style="margin-top:25px;">
+		<section id="personal-data">
+			<ul>
+				<li>
+					<lable>姓名：</lable><input id="input-name" class="input" type="text" name="name">
+				</li>
+				<li id="sex">
+					<lable>性别：</lable><input id="input-sex" class="input" type="text" name="sex">
+				</li>
+				<li>
+					<lable>职位：</lable><input id="input-work" class="input" type="text" name="posit" readonly="readonly">
+				</li>
+				<li>
+					<lable>生日：</lable><input id="input-birth" class="input" type="text" name="birth">
+				</li>
+				<li>
+					<lable>电话：</lable><input id="input-telephone" class="input" type="text" name="tel">
+				</li>
+				<li>
+					<lable>&ensp;QQ：</lable><input id="input-qq" class="input" type="text" name="qq">
+				</li>
+				<li>
+					<lable>是否具有管理权：</lable><input id="input-power" class="input" type="text" name="power" readonly="readonly">
+				</li>
+				<li><input id="submit" name="submit" type="submit" value="保存更改"/></li>
+			</ul>
+		</section>
+		</form>
+	</div>
+	</div>
+</body>
+</heml>

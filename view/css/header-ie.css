@@ -1,0 +1,22 @@
+*{padding:0px; margin:0px; font-family: "微软雅黑"}
+/*头部*/
+.header{background-color:#5bc0de; height:80px; width:100%;} 
+	.logo{width:240px; padding:10px 20px; float: left;}
+	.top_right{float: right; display: inline-block;}
+	.top_right ul{width:470px; height:80px;padding-top: 10px}
+	.top_right ul li{float: left; margin:0px 8px; list-style: none; width:130px; height:60px; list-style: none;}
+	.top_right ul li a{color: #fff; display: block; width:130px; height: 60px; line-height: 60px; text-align: center; text-decoration: none; font-size: 18px;}
+	.top_right ul li a:hover{background-color:#0E6390;}
+
+/*主要内容*/
+.main{width:100%; position: relative;}
+.left{width:19%; min-width: 240px; height: 100%; position: fixed; background-color:#1D9BDC;}
+.left ul{width:100%; height:auto; overflow: hidden;}
+.left ul li{width:100%; height:80px; list-style: none;}
+.left ul li a{display: block; width:100%; height:80px; text-align: center; line-height: 80px; font-size: 18px; color: #fff;text-decoration: none;}
+.left ul li a:hover{background-color:#428bca;}
+.left ul li.li_top{border-top:1px solid #428bca;}
+.left ul li.li_two{background-color: #6174E8}
+.left ul li.li_thr{background-color: #ef715c}
+.left ul li.li_fou{background-color: #f75338}
+.left ul li.li_fiv{background-color: #5cb3ef}

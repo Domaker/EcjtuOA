@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0px;}
+#all{width:1365px; height:665px;  font-family:"张海山锐线体简";}
+ul{list-style-type:none; overflow:hidden;}
+li{ list-style-type:none; width:200px; text-align: center;}
+a{text-decoration:none; font-size:25px;}
+td a{font-size: 18px;}
+#header{width:100%; height:14.7%; background-color:#1d9bdc; position:absolute; top:0%; left:0%;}
+#logo{width:409px; height:108px; margin:13px 0px 0px 66px;}
+@font-face{font-family: "imooc-icon"; src: url("../fonts/icomoon.eot#iefix") format("embedded-opentype"),url("../fonts/icomoon.woff") format("woff"),url("../fonts/icomoon.ttf") format("truetype"),url("../fonts/icomoon.svg") format("svg");
+font-weight:normal;
+font-style:normal;
+}
+.imooc-icon{font-family:"imooc-icon"; font-weight:normal; font-size:64px; font-style:normal; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+#homepage{width:376px; height:41px;  margin:-91px 0px 0px 69.7%;}
+#homepage a{color:#FFF;}
+#homepage li{list-style:none; float:left; margin-right: 43px;}
+#task{width:291px; height:80px;}
+#word1 a{width:136px; height:26px; margin:28px 0px 0px 75px; font-size:34px; text-decoration:none;}
+#manage{width:291px; height:80px;}
+#font{width:136px; height:26px; margin:28px 0px 0px 75px; font-size:34px;}
+#meun{width:77.5%; height:85.2%;  position:absolute; left:17.7%; top:14.7%;}		
+#choose{width:204px; height:50px; margin:17px 0px 0px 196px;}
+#table{width:820px; height:477px; margin:14px 0px 0px 145px; border-radius:25px; background-attachment:scroll; }
+#word{width:441px; height:31px; margin:6px 0px 0px 47px; word-spacing:40px; font-size:26px;}
+#table li:nth-child(2n+2){background:#eeeeee; float:none; width:820px; height:50px; margin-left:-40px;}
+#table li:nth-child(2n+1){background:white; float:none; width:820px; height:50px; margin-left:-40px;}
+#to_add{width:210px; height:56px; margin:16px 0px 0px 305px;}
+#to_add a{width:169px; height:26px; font-size:25px; border:3px dashed #a0a0a0; padding-top:0px; padding-left::0px; border-radius:5px; padding:12px 18px 12px 18px; color:#000;}
+
+#add_member{width:77.5%; height:85.2%;  position:absolute; left:49%; top:20%; font-size: 16px; font-family:"张海山锐线体简"; }
+.manager_select{width:204px; height:50px; font-family:'张海山锐线体简'; font-size:30px;display:block;}
+
+.help{position: absolute;display: none; width:130px; height:auto; overflow: hidden; font-weight: bold; margin:-120px 440px; border:1px solid #ccc; }
+
+

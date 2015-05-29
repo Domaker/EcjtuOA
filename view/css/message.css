@@ -1,0 +1,10 @@
+	.mes_main{width:80%; height:auto; overflow: hidden; margin:30px auto; position: relative;}
+	.mes_top{width:100%;height:auto; overflow: hidden;}
+	.mes_top h2{float: left; font-size: 22px;}
+	.mes_top span{display: block;font-size: 22px}
+	
+	.mes_back,.mes_get{border:1px solid #ccc; padding:10px; overflow: hidden}
+	.mes_back{margin-top:5px;}
+	.mes_back p,.mes_get p{font-size: 18px;text-indent: 22px; width:85%; float:left;}
+	.mes_get a{display:block; width:100px; height:100px; float: right; font-size: 24px; color:#fff; background-color: #1D9BDC; text-decoration: none; text-align: center;line-height: 100px}
+	.mes_get a:hover{background-color: #6174E8;}

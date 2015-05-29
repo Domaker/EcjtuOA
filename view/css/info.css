@@ -1,0 +1,65 @@
+*{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+.imooc-icon{
+	font-family: "imooc-icon";
+	font-style: normal;
+	font-size: 22px;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+.transition:hover{
+	background-color:#4A5BC4;
+}
+#personal-data{
+	width: 670px;
+	height: 530px;
+	margin: auto;
+	position: relative;
+	top: 7%;
+}
+#personal-data ul li{
+	list-style: none;
+	display: block;
+	margin-bottom: 3%; 
+}
+.input{
+	height: 48px;
+	border: 2px solid  #D2D2D2;
+	border-radius: 3px;
+	font-size: 20px;
+}
+#input-name{
+	width: 250px;
+}
+#sex{
+	position: absolute;
+	right: 0px;
+	top: -0px;
+}
+#input-sex{
+	width: 160px;
+}
+#input-work{
+	width: 570px;
+}
+#input-telephone{
+	width: 570px;
+}
+#input-QQ{
+	width: 576px;
+}
+#input-power{
+	width: 408px;
+}
+#submit{
+	width: 187px;
+	height: 59px;
+	font-size: 32px;
+	background-color: #6174E8;
+	color: #FFF;
+	border-radius: 5px;
+	margin: 0 36%;
+}
